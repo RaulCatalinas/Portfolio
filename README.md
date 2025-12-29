@@ -1,46 +1,58 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-bun create astro@latest -- --template basics
+My personal portfolio website showcasing my projects, skills, and experience as a developer.
+
+## 🚀 Built With
+
+- [Astro](https://astro.build/) - Static Site Generator
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## ✨ Features
+
+- Responsive design for mobile and desktop
+- Projects showcase with source code links
+- Clean and minimalist UI
+- Fast loading times with Astro's optimization
+
+## 🛠️ Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/Portfolio.git
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Navigate to the project directory
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+cd Portfolio
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Install dependencies
 
-## 🧞 Commands
+```bash
+bun install
+```
 
-All commands are run from the root of the project, from a terminal:
+4. Run the development server
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+```bash
+bun run dev
+```
 
-## 👀 Want to learn more?
+5. Open [http://localhost:4321](http://localhost:4321) in your browser
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📦 Build for Production
+
+```bash
+bun run build
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📧 Contact
+
+- GitHub: [Raul Catalinas](https://github.com/RaulCatalinas)
+- Email: raulcatalinas@gmail.com
