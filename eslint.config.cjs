@@ -37,7 +37,7 @@ module.exports = (async function config() {
       rules: {
         '@typescript-eslint/space-before-function-paren': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
-        'prettier/prettier': ['error', { singleQuote: true }]
+        'prettier/prettier': 'error'
       }
     }
   ]

@@ -7,6 +7,6 @@ trailingComma: none
 bracketSpacing: true
 bracketSameLine: false
 arrowParens: avoid
+astroAllowShorthand: true
 plugins: ['prettier-plugin-astro']
 overrides: [{ files: '**/*.astro', options: { parser: 'astro' } }]
-astroAllowShorthand: true
