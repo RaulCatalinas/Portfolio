@@ -1,12 +1,14 @@
 const astro = require('eslint-plugin-astro')
 const jsxA11y = require('eslint-plugin-jsx-a11y')
 const prettier = require('eslint-plugin-prettier/recommended')
+const eslintConfigPrettier = require('eslint-config-prettier/flat')
 
 module.exports = (async function config() {
   const { default: love } = await import('eslint-config-love')
 
   return [
     ...astro.configs['flat/recommended'],
+    eslintConfigPrettier,
     prettier,
 
     {
