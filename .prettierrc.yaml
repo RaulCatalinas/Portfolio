@@ -8,5 +8,6 @@ bracketSpacing: true
 bracketSameLine: false
 arrowParens: avoid
 astroAllowShorthand: true
+endOfLine: lf
 plugins: ['prettier-plugin-astro']
 overrides: [{ files: '**/*.astro', options: { parser: 'astro' } }]
