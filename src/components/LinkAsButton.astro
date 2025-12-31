@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string
+  text: string
+  type: 'primary' | 'secondary'
+}
+
+const { href, text, type } = Astro.props
+---
+
+<a
+  {href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class=`inline-block ${type === "primary" ? "bg-blue-900 hover:bg-blue-800" : "bg-gray-700 hover:bg-gray-600"} text-white px-5 py-2.5 rounded-md transition-colors font-medium`
+>
+  {text}
+</a>

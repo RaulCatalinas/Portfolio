@@ -1,0 +1,15 @@
+---
+import SectionTitle from '@/components/SectionTitle.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<section>
+  <SectionTitle {title} />
+
+  <slot />
+</section>
