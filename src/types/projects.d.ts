@@ -2,7 +2,7 @@ interface BaseProject {
   title: string
   description: string
   codeUrl: string
-  programmingLanguage?: string
+  inDevelopment: boolean
 }
 
 export interface AppProject extends BaseProject {
@@ -15,6 +15,7 @@ export interface AppProject extends BaseProject {
 export interface LibraryProject extends BaseProject {
   type: 'library'
   packageUrl: string
+  programmingLanguage: string
 }
 
 export type Project = AppProject | LibraryProject

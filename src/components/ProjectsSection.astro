@@ -10,6 +10,7 @@ import type { AppProject, LibraryProject, Project } from '@/types/projects'
 
 // Astro
 import { Image } from 'astro:assets'
+import RenderDevelopmentStatus from './RenderDevelopmentStatus.astro'
 
 interface Props {
   projects: Project[]
@@ -29,6 +30,11 @@ const { projects } = Astro.props
             ? (project as LibraryProject).packageUrl
             : undefined
 
+        const programmingLanguage =
+          project.type === 'library'
+            ? (project as LibraryProject).programmingLanguage
+            : undefined
+
         const imageUrl =
           project.type === 'app' ? (project as AppProject).imageUrl : undefined
 
@@ -46,9 +52,7 @@ const { projects } = Astro.props
           >
             <span class="text-xs font-medium text-blue-400/80 mb-4 uppercase tracking-widest">
               {`${project.type}${
-                project.programmingLanguage
-                  ? ` • ${project.programmingLanguage}`
-                  : ''
+                programmingLanguage ? ` • ${programmingLanguage}` : ''
               }`}
             </span>
 
@@ -64,7 +68,10 @@ const { projects } = Astro.props
               />
             )}
 
-            <h3 class="text-2xl font-semibold mb-3">{project.title}</h3>
+            <div class="flex flex-row items-center justify-center gap-6 mb-3">
+              <h3 class="text-2xl font-semibold">{project.title}</h3>
+              <RenderDevelopmentStatus inDevelopment={project.inDevelopment} />
+            </div>
 
             <p
               class={`text-gray-400 mb-6 leading-loose text-pretty max-w-md whitespace-pre-line ${imageUrl ? 'grow' : ''}`}

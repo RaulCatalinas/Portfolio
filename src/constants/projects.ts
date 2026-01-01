@@ -10,7 +10,8 @@ export const projects: Project[] = [
     altText: 'EasyViewer logo',
     codeUrl: 'https://github.com/RaulCatalinas/EasyViewer',
     type: 'app',
-    technologies: ['Dart', 'Flutter']
+    technologies: ['Dart', 'Flutter'],
+    inDevelopment: false
   },
   {
     title: 'README-Builder',
@@ -21,7 +22,8 @@ export const projects: Project[] = [
     altText: 'README-Builder logo',
     codeUrl: 'https://github.com/RaulCatalinas/README-Builder',
     type: 'app',
-    technologies: ['Kotlin', 'Kotlin Multiplatform (KMP)']
+    technologies: ['Kotlin', 'Kotlin Multiplatform (KMP)'],
+    inDevelopment: true
   },
   {
     title: 'LogKeeper',
@@ -30,7 +32,8 @@ export const projects: Project[] = [
     codeUrl: 'https://github.com/RaulCatalinas/LogKeeper',
     type: 'library',
     programmingLanguage: 'Dart',
-    packageUrl: 'https://pub.dev/packages/logkeeper'
+    packageUrl: 'https://pub.dev/packages/logkeeper',
+    inDevelopment: false
   },
   {
     title: 'Flutter-Themed',
@@ -39,6 +42,7 @@ export const projects: Project[] = [
     codeUrl: 'https://github.com/RaulCatalinas/Flutter-Themed',
     type: 'library',
     programmingLanguage: 'Dart',
-    packageUrl: 'https://pub.dev/packages/flutter_themed'
+    packageUrl: 'https://pub.dev/packages/flutter_themed',
+    inDevelopment: false
   }
 ] as const
