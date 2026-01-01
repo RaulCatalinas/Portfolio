@@ -2,6 +2,8 @@
 // Components
 import SectionLayout from '@/layouts/SectionLayout.astro'
 import LinkAsButton from './LinkAsButton.astro'
+import LinkAsButtonWithIcon from './LinkAsButtonWithIcon.astro'
+import RenderTechnologiesLabels from './RenderTechnologiesLabels.astro'
 
 // Types
 import type { AppProject, LibraryProject, Project } from '@/types/projects'
@@ -33,12 +35,21 @@ const { projects } = Astro.props
         const altText =
           project.type === 'app' ? (project as AppProject).altText : undefined
 
+        const technologies =
+          project.type === 'app'
+            ? (project as AppProject).technologies
+            : undefined
+
         return (
           <article
             class={`flex flex-col items-center text-center bg-neutral-800 rounded-xl ${imageUrl ? 'p-8' : 'p-6 h-70'}`}
           >
             <span class="text-xs font-medium text-blue-400/80 mb-4 uppercase tracking-widest">
-              {`${project.type}${project.programmingLanguage ? ` • ${project.programmingLanguage}` : ''}`}
+              {`${project.type}${
+                project.programmingLanguage
+                  ? ` • ${project.programmingLanguage}`
+                  : ''
+              }`}
             </span>
 
             {imageUrl && altText && (
@@ -49,6 +60,7 @@ const { projects } = Astro.props
                 height={125}
                 loading="lazy"
                 class="mb-6"
+                decoding="async"
               />
             )}
 
@@ -60,11 +72,25 @@ const { projects } = Astro.props
               {project.description}
             </p>
 
-            <div class="flex gap-3">
-              <LinkAsButton
+            {technologies && (
+              <RenderTechnologiesLabels
+                technologies={technologies}
+                type="secondary"
+                styles="mb-6"
+              />
+            )}
+
+            <div class="flex gap-4">
+              <LinkAsButtonWithIcon
                 href={project.codeUrl}
                 text="View code"
                 type="primary"
+                imageUrl="/icons/github.svg"
+                altText="GitHub logo"
+                imageWidth={30}
+                imageHeight={30}
+                imageLoading="lazy"
+                styles="gap-4"
               />
               {packageUrl && (
                 <LinkAsButton

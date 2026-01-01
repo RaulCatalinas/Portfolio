@@ -1,0 +1,42 @@
+---
+// Components
+import LinkAsButton from './LinkAsButton.astro'
+
+// Astro
+import { Image } from 'astro:assets'
+
+interface Props {
+  href: string
+  text: string
+  type: 'primary' | 'secondary'
+  imageUrl: string
+  altText: string
+  imageWidth: number
+  imageHeight: number
+  imageLoading: 'eager' | 'lazy'
+  styles?: string
+}
+
+const {
+  href,
+  text,
+  type,
+  imageUrl,
+  altText,
+  imageWidth,
+  imageHeight,
+  imageLoading,
+  styles
+} = Astro.props
+---
+
+<LinkAsButton {href} {text} {type} {styles}>
+  <Image
+    src={imageUrl}
+    alt={altText}
+    width={imageWidth}
+    height={imageHeight}
+    decoding="async"
+    loading={imageLoading}
+  />
+</LinkAsButton>

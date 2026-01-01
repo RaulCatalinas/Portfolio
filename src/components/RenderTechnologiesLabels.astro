@@ -1,0 +1,21 @@
+---
+interface Props {
+  technologies: string[]
+  type: 'primary' | 'secondary'
+  styles?: string
+}
+
+const { technologies, type, styles } = Astro.props
+---
+
+<div class={`flex flex-wrap gap-3 justify-center ${styles ?? ''}`}>
+  {
+    technologies.map(technology => (
+      <span
+        class={`bg-neutral-700 ${type === 'primary' ? 'text-blue-400' : 'text-white'} px-4 py-2 rounded-full text-sm`}
+      >
+        {technology}
+      </span>
+    ))
+  }
+</div>

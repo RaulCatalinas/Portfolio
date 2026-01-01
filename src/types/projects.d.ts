@@ -9,6 +9,7 @@ export interface AppProject extends BaseProject {
   type: 'app'
   imageUrl: string
   altText: string
+  technologies: string[]
 }
 
 export interface LibraryProject extends BaseProject {
