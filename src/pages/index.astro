@@ -1,9 +1,15 @@
 ---
+// Components
+import AboutSection from '@/components/AboutSection.astro'
 import ProjectsSection from '@/components/ProjectsSection.astro'
-import { projects } from '@/constants/projects'
 import Layout from '@/layouts/Layout.astro'
+
+// Constants
+import { projects } from '@/constants/projects'
+import { technicalSkills } from '@/constants/technical-skills'
 ---
 
 <Layout>
+  <AboutSection {technicalSkills} />
   <ProjectsSection {projects} />
 </Layout>

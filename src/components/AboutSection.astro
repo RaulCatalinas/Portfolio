@@ -1,0 +1,45 @@
+---
+import SectionLayout from '@/layouts/SectionLayout.astro'
+
+interface Props {
+  technicalSkills: string[]
+}
+
+const { technicalSkills } = Astro.props
+---
+
+<SectionLayout title="About me">
+  <p class="text-white text-center mb-4">
+    A little bit about my technical and professional background.
+  </p>
+
+  <div class="grid grid-cols-2 gap-6 text-center bg-neutral-800 p-6 rounded-xl">
+    <div>
+      <h3 class="text-white text-xl font-semibold mb-4">About me</h3>
+      <p class="text-white text-pretty mb-6">
+        Junior Full Stack Developer specializing in backend development and
+        application logic. Currently expanding my mobile development skills
+        through SEPE's Mobile Application Development program.
+      </p>
+      <p class="text-white text-pretty">
+        I build functional, well-structured applications and have published
+        several libraries that other developers use. Looking for opportunities
+        to contribute to impactful projects and grow alongside experienced
+        teams.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-white text-xl font-semibold mb-4">Technical Skills</h3>
+
+      <div class="flex flex-wrap gap-3 justify-center">
+        {
+          technicalSkills.map(technicalSkill => (
+            <span class="bg-neutral-700 text-blue-400 px-4 py-2 rounded-full text-sm">
+              {technicalSkill}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</SectionLayout>
