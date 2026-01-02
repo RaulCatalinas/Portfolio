@@ -1,6 +1,6 @@
 {
   "src/**/*.{astro,ts,tsx}": [
-    "prettier src --check",
+    "prettier src --write",
     "eslint src --max-warnings 0"
   ]
 }

@@ -38,7 +38,7 @@ module.exports = (async function config() {
         '@typescript-eslint/space-before-function-paren': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
-        'no-console': 'warn',
+        'no-console': 'off',
         'prettier/prettier': 'error'
       }
     }
