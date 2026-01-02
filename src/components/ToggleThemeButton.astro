@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<button
+  onclick="window.toggleTheme()"
+  class="p-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors hover:cursor-pointer"
+  aria-label="Toggle theme"
+>
+  <Image
+    src="/icons/theme-light-dark.svg"
+    alt="Toggle theme icon"
+    width={28}
+    height={28}
+    class="invert-0 dark:invert"
+    decoding="async"
+    loading="eager"
+  />
+</button>

@@ -21,7 +21,7 @@ const { projects } = Astro.props
 
 <SectionLayout title="Featured projects">
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white max-w-5xl mx-auto"
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 text-black dark:text-white max-w-5xl mx-auto"
   >
     {
       projects.map(project => {
@@ -48,12 +48,17 @@ const { projects } = Astro.props
 
         return (
           <article
-            class={`flex flex-col items-center text-center bg-neutral-800 rounded-xl ${imageUrl ? 'p-8' : 'p-6 h-70'}`}
+            class={`
+              flex flex-col items-center text-center bg-neutral-300
+              dark:bg-neutral-800 rounded-xl ${imageUrl ? 'p-8' : 'p-6 h-70'}
+            `}
           >
-            <span class="text-xs font-medium text-blue-400/80 mb-4 uppercase tracking-widest">
-              {`${project.type}${
-                programmingLanguage ? ` • ${programmingLanguage}` : ''
-              }`}
+            <span class="text-xs font-medium text-blue-700 dark:text-blue-400/80 mb-4 uppercase tracking-widest">
+              {`
+                ${project.type}${
+                  programmingLanguage ? ` • ${programmingLanguage}` : ''
+                }
+              `}
             </span>
 
             {imageUrl && altText && (
@@ -74,7 +79,7 @@ const { projects } = Astro.props
             </div>
 
             <p
-              class={`text-gray-400 mb-6 leading-loose text-pretty max-w-md whitespace-pre-line ${imageUrl ? 'grow' : ''}`}
+              class={`text-neutral-800 dark:text-gray-400 mb-6 leading-loose text-pretty max-w-md whitespace-pre-line ${imageUrl ? 'grow' : ''}`}
             >
               {project.description}
             </p>

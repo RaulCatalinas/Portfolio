@@ -12,7 +12,10 @@ const { technologies, type, styles } = Astro.props
   {
     technologies.map(technology => (
       <span
-        class={`bg-neutral-700 ${type === 'primary' ? 'text-blue-400' : 'text-white'} px-4 py-2 rounded-full text-sm`}
+        class={`
+          bg-white dark:bg-neutral-700 px-4 py-2 rounded-full text-sm
+          ${type === 'primary' ? 'text-blue-700 dark:text-blue-400' : 'text-neutral-800 dark:text-white'}
+        `}
       >
         {technology}
       </span>
