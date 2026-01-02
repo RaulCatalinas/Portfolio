@@ -21,8 +21,8 @@ export default function LanguageSwitch() {
           setActiveLang('ES')
         }}
         className={`
-          px-2 py-1 rounded-full text-xs font-medium transition-all duration-200
-          hover:cursor-pointer
+          px-2 py-1 rounded-full text-xs font-medium duration-200
+          hover:cursor-pointer transition-colors
           ${activeLang === 'ES' ? activeLangStyles : inactiveLangStyles}
         `}
       >
