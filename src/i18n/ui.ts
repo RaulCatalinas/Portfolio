@@ -12,11 +12,11 @@ export const ui = {
     'about.sectionTitle': 'About Me',
     'about.intro':
       'A little bit about my technical and professional background.',
+
     'about.descriptionPart1':
-      "Junior Full Stack Developer specializing in backend development and application logic. Currently expanding my mobile development skills through SEPE's Mobile Application Development program.",
+      "Junior Backend Developer with experience in application logic and system design. Currently expanding my skills in mobile development through SEPE's Mobile Application Development program.",
     'about.descriptionPart2':
-      'I build functional, well-structured applications and have published several libraries that other developers use. Looking for opportunities to contribute to impactful projects and grow alongside experienced teams.',
-    'about.technicalSkills': 'Technical Skills',
+      'I focus on building functional, maintainable code and have published libraries for other developers. Seeking opportunities to contribute to meaningful projects and learn from experienced teams.',
     'featureProjects.sectionTitle': 'Featured Projects',
     'featureProjects.viewCode': 'View Code',
     'featureProjects.viewPackage': 'View Package',
@@ -26,10 +26,9 @@ export const ui = {
     'about.sectionTitle': 'Sobre Mí',
     'about.intro': 'Un poco sobre mi experiencia técnica y profesional.',
     'about.descriptionPart1':
-      'Desarrollador Full Stack Junior especializado en desarrollo backend y lógica de aplicaciones. Actualmente ampliando mis habilidades en desarrollo móvil a través del programa de Desarrollo de Aplicaciones Móviles del SEPE.',
+      'Desarrollador Junior Backend con experiencia en lógica de aplicaciones y diseño de sistemas. Actualmente ampliando mis habilidades en desarrollo móvil a través del programa del SEPE.',
     'about.descriptionPart2':
-      'Construyo aplicaciones funcionales y bien estructuradas, y he publicado varias librerías que otros desarrolladores utilizan. Busco oportunidades para contribuir a proyectos impactantes y crecer junto a equipos experimentados.',
-    'about.technicalSkills': 'Habilidades Técnicas',
+      'Me enfoco en construir código funcional y mantenible, y he publicado librerías para otros desarrolladores. Busco oportunidades para contribuir a proyectos significativos y aprender de equipos experimentados.',
     'featureProjects.sectionTitle': 'Proyectos Destacados',
     'featureProjects.viewCode': 'Ver Código',
     'featureProjects.viewPackage': 'Ver Paquete',

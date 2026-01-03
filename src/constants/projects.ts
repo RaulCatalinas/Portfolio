@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: 'LogKeeper',
     description: {
       en: 'Simple file logger that works out of the box with automatic timestamping and session management',
-      es: 'Registrador de archivos simple que funciona de inmediato con marcas de tiempo automáticas y gestión de sesiones'
+      es: 'Logger simple para archivos que funciona de inmediato con timestamps automáticos y gestión de sesiones'
     },
     codeUrl: 'https://github.com/RaulCatalinas/LogKeeper',
     type: 'library',
