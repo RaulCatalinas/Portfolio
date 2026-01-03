@@ -1,17 +1,24 @@
 ---
+// Components
 import SectionLayout from '@/layouts/SectionLayout.astro'
 import RenderTechnologiesLabels from './RenderTechnologiesLabels.astro'
+
+// i18n
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 interface Props {
   technicalSkills: string[]
 }
 
 const { technicalSkills } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<SectionLayout title="About me">
+<SectionLayout title={t('about.sectionTitle')}>
   <p class="text-black dark:text-white text-center mb-4 transition-colors">
-    A little bit about my technical and professional background.
+    {t('about.intro')}
   </p>
 
   <div
@@ -19,25 +26,20 @@ const { technicalSkills } = Astro.props
   >
     <div>
       <h3 class="text-black dark:text-white text-xl font-semibold mb-4">
-        About me
+        {t('about.sectionTitle')}
       </h3>
       <p class="text-black dark:text-white text-pretty mb-6 transition-colors">
-        Junior Full Stack Developer specializing in backend development and
-        application logic. Currently expanding my mobile development skills
-        through SEPE's Mobile Application Development program.
+        {t('about.descriptionPart1')}
       </p>
       <p class="text-black dark:text-white text-pretty transition-colors">
-        I build functional, well-structured applications and have published
-        several libraries that other developers use. Looking for opportunities
-        to contribute to impactful projects and grow alongside experienced
-        teams.
+        {t('about.descriptionPart2')}
       </p>
     </div>
     <div>
       <h3
         class="text-black dark:text-white text-xl font-semibold mb-4 transition-colors"
       >
-        Technical Skills
+        {t('about.technicalSkills')}
       </h3>
 
       <RenderTechnologiesLabels technologies={technicalSkills} type="primary" />

@@ -3,8 +3,10 @@ import type { Project } from '@/types/projects'
 export const projects: Project[] = [
   {
     title: 'EasyViewer',
-    description:
-      'App to download YouTube videos. \nCompletely rebuilt from Python/Flet to Flutter for better performance.',
+    description: {
+      en: 'App to download YouTube videos. \nCompletely rebuilt from Python/Flet to Flutter for better performance.',
+      es: 'Aplicación para descargar videos de YouTube. \nCompletamente reconstruida desde Python/Flet a Flutter para mejor rendimiento.'
+    },
     imageUrl:
       'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto/v1753656531/EasyViewer_aboiab.png',
     altText: 'EasyViewer logo',
@@ -15,8 +17,10 @@ export const projects: Project[] = [
   },
   {
     title: 'README-Builder',
-    description:
-      'Create professional README files in minutes. \nSimple form-based interface for developers who want great documentation without the hassle.',
+    description: {
+      en: 'Create professional README files in minutes. \nSimple form-based interface for developers who want great documentation without the hassle.',
+      es: 'Crea archivos README profesionales en minutos. \nInterfaz basada en formularios para desarrolladores que quieren una documentación genial sin complicaciones.'
+    },
     imageUrl:
       'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto/v1753656132/ReadmeCraft_asxz45.png',
     altText: 'README-Builder logo',
@@ -27,8 +31,10 @@ export const projects: Project[] = [
   },
   {
     title: 'LogKeeper',
-    description:
-      'Simple file logger that works out of the box with automatic timestamping and session management',
+    description: {
+      en: 'Simple file logger that works out of the box with automatic timestamping and session management',
+      es: 'Registrador de archivos simple que funciona de inmediato con marcas de tiempo automáticas y gestión de sesiones'
+    },
     codeUrl: 'https://github.com/RaulCatalinas/LogKeeper',
     type: 'library',
     programmingLanguage: 'Dart',
@@ -37,8 +43,10 @@ export const projects: Project[] = [
   },
   {
     title: 'Flutter-Themed',
-    description:
-      'A simple, plug-and-play theme management library for Flutter with optional persistence and zero configuration required.',
+    description: {
+      en: 'A simple, plug-and-play theme management library for Flutter with optional persistence and zero configuration required.',
+      es: 'Una biblioteca de gestión de temas simple y lista para usar para Flutter con persistencia opcional y sin configuración requerida.'
+    },
     codeUrl: 'https://github.com/RaulCatalinas/Flutter-Themed',
     type: 'library',
     programmingLanguage: 'Dart',

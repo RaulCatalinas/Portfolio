@@ -1,15 +1,20 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
 interface Props {
   inDevelopment: boolean
 }
 
 const { inDevelopment } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 {
   inDevelopment && (
     <span class="px-3 py-1 rounded-full text-xs font-medium text-white bg-orange-600/80">
-      Coming soon
+      {t('devStatus.comingSoon')}
     </span>
   )
 }

@@ -1,6 +1,9 @@
 interface BaseProject {
   title: string
-  description: string
+  description: {
+    en: string
+    es: string
+  }
   codeUrl: string
   inDevelopment: boolean
 }

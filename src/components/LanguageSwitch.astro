@@ -1,0 +1,70 @@
+---
+const currentPath = Astro.url.pathname
+const currentLang = currentPath.startsWith('/es') ? 'es' : 'en'
+---
+
+<div
+  class="flex items-center bg-neutral-300 dark:bg-gray-800 rounded-full p-1 gap-1 transition-colors"
+>
+  <a
+    href="/"
+    class={`
+      px-2 py-1 rounded-full text-xs font-medium transition-all duration-200
+      ${
+        currentLang === 'en'
+          ? 'bg-blue-600 text-white scale-105'
+          : 'text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white'
+      }
+    `}
+  >
+    EN
+  </a>
+
+  <a
+    href="/es"
+    class={`
+      px-2 py-1 rounded-full text-xs font-medium transition-all duration-200
+      ${
+        currentLang === 'es'
+          ? 'bg-blue-600 text-white scale-105'
+          : 'text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white'
+      }
+    `}
+  >
+    ES
+  </a>
+</div>
+
+<script>
+  import type { AppLanguages } from '@/types/languages'
+
+  let activeLang: AppLanguages = 'en'
+
+  const activeLangStyles = 'bg-blue-600 text-white scale-105'
+  const inactiveLangStyles =
+    'text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white'
+
+  const allLangButtons = document.querySelectorAll('div button')
+
+  const applyStyles = () => {
+    allLangButtons.forEach(btn => {
+      const lang = btn.getAttribute('data-lang') as AppLanguages
+      const isActive = lang === activeLang
+
+      btn.className = `
+        px-2 py-1 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer
+        ${isActive ? activeLangStyles : inactiveLangStyles}
+      `
+    })
+  }
+
+  applyStyles()
+
+  allLangButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeLang = (btn.getAttribute('data-lang') as AppLanguages) || 'EN'
+      console.log(`Language changed to: ${activeLang}`)
+      applyStyles()
+    })
+  })
+</script>

@@ -3,6 +3,7 @@
 import SectionLayout from '@/layouts/SectionLayout.astro'
 import LinkAsButton from './LinkAsButton.astro'
 import LinkAsButtonWithIcon from './LinkAsButtonWithIcon.astro'
+import RenderDevelopmentStatus from './RenderDevelopmentStatus.astro'
 import RenderTechnologiesLabels from './RenderTechnologiesLabels.astro'
 
 // Types
@@ -10,16 +11,21 @@ import type { AppProject, LibraryProject, Project } from '@/types/projects'
 
 // Astro
 import { Image } from 'astro:assets'
-import RenderDevelopmentStatus from './RenderDevelopmentStatus.astro'
+
+// i18n
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 interface Props {
   projects: Project[]
 }
 
 const { projects } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<SectionLayout title="Featured projects">
+<SectionLayout title={t('featureProjects.sectionTitle')}>
   <div
     class="grid grid-cols-1 md:grid-cols-2 gap-6 text-black dark:text-white max-w-5xl mx-auto transition-colors"
   >
@@ -81,7 +87,7 @@ const { projects } = Astro.props
             <p
               class={`text-neutral-800 dark:text-gray-400 mb-6 leading-loose transition-colors text-pretty max-w-md whitespace-pre-line ${imageUrl ? 'grow' : ''}`}
             >
-              {project.description}
+              {project.description[lang]}
             </p>
 
             {technologies && (
@@ -95,7 +101,7 @@ const { projects } = Astro.props
             <div class="flex gap-4">
               <LinkAsButtonWithIcon
                 href={project.codeUrl}
-                text="View code"
+                text={t('featureProjects.viewCode')}
                 type="primary"
                 imageUrl="/icons/github.svg"
                 altText="GitHub logo"
@@ -107,7 +113,7 @@ const { projects } = Astro.props
               {packageUrl && (
                 <LinkAsButton
                   href={packageUrl}
-                  text="Package"
+                  text={t('featureProjects.viewPackage')}
                   type="secondary"
                 />
               )}
