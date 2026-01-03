@@ -2,6 +2,7 @@
 // Components
 import AboutSection from '@/components/AboutSection.astro'
 import Config from '@/components/Config.astro'
+import Header from '@/components/Header.astro'
 import ProjectsSection from '@/components/ProjectsSection.astro'
 import Layout from '@/layouts/Layout.astro'
 
@@ -11,6 +12,7 @@ import { technicalSkills } from '@/constants/technical-skills'
 ---
 
 <Layout>
+  <Header />
   <Config />
   <AboutSection {technicalSkills} />
   <ProjectsSection {projects} />

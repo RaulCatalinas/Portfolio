@@ -17,10 +17,14 @@ export const ui = {
       "Junior Backend Developer with experience in application logic and system design. Currently expanding my skills in mobile development through SEPE's Mobile Application Development program.",
     'about.descriptionPart2':
       'I focus on building functional, maintainable code and have published libraries for other developers. Seeking opportunities to contribute to meaningful projects and learn from experienced teams.',
+    'about.technicalSkills': 'Technical Skills',
     'featureProjects.sectionTitle': 'Featured Projects',
     'featureProjects.viewCode': 'View Code',
     'featureProjects.viewPackage': 'View Package',
-    'devStatus.comingSoon': 'Coming soon'
+    'devStatus.comingSoon': 'Coming soon',
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.projects': 'Projects'
   },
   es: {
     'about.sectionTitle': 'Sobre Mí',
@@ -29,9 +33,13 @@ export const ui = {
       'Desarrollador Junior Backend con experiencia en lógica de aplicaciones y diseño de sistemas. Actualmente ampliando mis habilidades en desarrollo móvil a través del programa del SEPE.',
     'about.descriptionPart2':
       'Me enfoco en construir código funcional y mantenible, y he publicado librerías para otros desarrolladores. Busco oportunidades para contribuir a proyectos significativos y aprender de equipos experimentados.',
+    'about.technicalSkills': 'Habilidades Técnicas',
     'featureProjects.sectionTitle': 'Proyectos Destacados',
     'featureProjects.viewCode': 'Ver Código',
     'featureProjects.viewPackage': 'Ver Paquete',
-    'devStatus.comingSoon': 'Próximamente'
+    'devStatus.comingSoon': 'Próximamente',
+    'nav.home': 'Inicio',
+    'nav.about': 'Sobre Mí',
+    'nav.projects': 'Proyectos'
   }
 } as const
