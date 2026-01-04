@@ -1,7 +1,7 @@
 import type { SocialNetwork } from '@/types/social-network'
 import { EMAIL_ADDRESS } from './email'
 
-export const socialNetworks: SocialNetwork[] = [
+export const SOCIAL_NETWORKS: SocialNetwork[] = [
   {
     url: 'https://github.com/RaulCatalinas',
     iconPath: '/icons/github.svg',

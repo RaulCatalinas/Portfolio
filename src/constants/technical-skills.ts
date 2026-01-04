@@ -1,4 +1,4 @@
-export const technicalSkills: string[] = [
+export const TECHNICAL_SKILLS: string[] = [
   // Main languages/frameworks
   'JavaScript/TypeScript',
   'Dart',
