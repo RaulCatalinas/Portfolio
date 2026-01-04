@@ -2,10 +2,23 @@
 // CSS
 import '@/styles/global.css'
 
+// Third-Party components
+import { SEO } from 'astro-seo'
+
 // i18n
 import { getLangFromUrl } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
+
+const seoTitle =
+  lang === 'en'
+    ? 'Raúl Catalinas - Junior Mobile Developer'
+    : 'Raúl Catalinas - Desarrollador Mobile Junior'
+
+const seoDescription =
+  lang === 'en'
+    ? 'Junior Mobile Developer specializing in Flutter and Kotlin. Building cross-platform and native Android applications with focus on clean code.'
+    : 'Desarrollador Mobile Junior especializado en Flutter y Kotlin. Construyendo aplicaciones multiplataforma y nativas para Android con enfoque en código limpio.'
 ---
 
 <!doctype html>
@@ -13,8 +26,47 @@ const lang = getLangFromUrl(Astro.url)
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
+    <SEO
+      title={seoTitle}
+      description={seoDescription}
+      canonical={Astro.url.href}
+      openGraph={{
+        basic: {
+          title: seoTitle,
+          type: 'website',
+          image: `${Astro.url.origin}/og-image.png`,
+          url: Astro.url.href
+        },
+        optional: {
+          description: seoDescription,
+          locale: lang === 'en' ? 'en' : 'es',
+          siteName: 'Raúl Catalinas Portfolio'
+        }
+      }}
+      twitter={{
+        card: 'summary_large_image',
+        site: '@CatalinasRaul',
+        creator: '@CatalinasRaul'
+      }}
+      extend={{
+        meta: [
+          {
+            name: 'keywords',
+            content:
+              'Flutter, Kotlin, Mobile Developer, Android, Portfolio, Junior Developer, Cross-platform'
+          },
+          { name: 'author', content: 'Raúl Catalinas' },
+          { name: 'robots', content: 'index, follow' }
+        ],
+        link: [
+          { rel: 'alternate', hreflang: 'en', href: `${Astro.url.origin}/` },
+          { rel: 'alternate', hreflang: 'es', href: `${Astro.url.origin}/es` }
+        ]
+      }}
+    />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>Raul Catalinas Esteban - Developer Portfolio</title>
     <link
       rel="preload"
