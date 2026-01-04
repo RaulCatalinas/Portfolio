@@ -1,17 +1,19 @@
 export const TECHNICAL_SKILLS: string[] = [
-  // Main languages/frameworks
-  'JavaScript/TypeScript',
-  'Dart',
+  // Cross-platform
   'Flutter',
-  'Python',
-  'Kotlin',
+  'Dart',
 
-  // Frontend
+  // Native Mobile
+  'Kotlin',
+  'Android Studio',
+
+  // Web
+  'JavaScript/TypeScript',
   'HTML',
   'CSS',
   'Tailwind CSS',
 
-  // Tools
+  // Tools & Other
   'Git & GitHub',
-  'Android Studio'
-]
+  'Python'
+] as const
