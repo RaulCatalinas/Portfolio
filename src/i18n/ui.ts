@@ -1,10 +1,5 @@
 import type { AppLanguages } from '@/types/languages'
 
-export const languages = {
-  en: 'English',
-  es: 'Español'
-} as const
-
 export const defaultLang: AppLanguages = 'en'
 
 export const ui = {
