@@ -4,14 +4,15 @@ interface Props {
   text: string
   type: 'primary' | 'secondary'
   styles?: string
+  openInNewTab?: boolean
 }
 
-const { href, text, type, styles } = Astro.props
+const { href, text, type, styles, openInNewTab = true } = Astro.props
 ---
 
 <a
   {href}
-  target="_blank"
+  target={openInNewTab ? '_blank' : undefined}
   rel="noopener noreferrer"
   class={`
     inline-block px-5 py-2.5 rounded-md transition-colors font-medium
