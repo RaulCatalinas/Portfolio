@@ -14,9 +14,9 @@ export const ui = {
       'A little bit about my technical and professional background.',
 
     'about.descriptionPart1':
-      "Junior Backend Developer with experience in application logic and problem-solving. Currently expanding my skills in mobile development through SEPE's Mobile Application Development program.",
+      "Junior Mobile Developer with experience in Flutter and Android development. Currently completing SEPE's Mobile Application Development program, specializing in Kotlin and cross-platform solutions.",
     'about.descriptionPart2':
-      'I focus on building functional, maintainable code and have published libraries for other developers. Seeking opportunities to contribute to meaningful projects and learn from experienced teams.',
+      'I build functional mobile applications and have published libraries for other developers. Seeking opportunities to contribute to mobile projects and grow in native and cross-platform development.',
     'about.technicalSkills': 'Technical Skills',
     'featureProjects.sectionTitle': 'Featured Projects',
     'featureProjects.viewCode': 'View Code',
@@ -31,9 +31,9 @@ export const ui = {
     'about.sectionTitle': 'Sobre Mí',
     'about.intro': 'Un poco sobre mi experiencia técnica y profesional.',
     'about.descriptionPart1':
-      'Desarrollador Backend Junior con experiencia en lógica de aplicaciones y resolución de problemas. Actualmente ampliando mis habilidades en desarrollo móvil a través del programa del SEPE.',
+      'Desarrollador Mobile Junior con experiencia en Flutter y desarrollo Android. Actualmente finalizando el programa de Desarrollo de Aplicaciones Móviles del SEPE, especializándome en Kotlin y soluciones multiplataforma.',
     'about.descriptionPart2':
-      'Me enfoco en construir código funcional y mantenible, y he publicado librerías para otros desarrolladores. Busco oportunidades para contribuir a proyectos significativos y aprender de equipos experimentados.',
+      'Construyo aplicaciones móviles funcionales y he publicado librerías para otros desarrolladores. Busco oportunidades para contribuir a proyectos mobile y crecer en desarrollo nativo y multiplataforma.',
     'about.technicalSkills': 'Habilidades Técnicas',
     'featureProjects.sectionTitle': 'Proyectos Destacados',
     'featureProjects.viewCode': 'Ver Código',
