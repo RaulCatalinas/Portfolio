@@ -5,21 +5,18 @@ export const socialNetworks: SocialNetwork[] = [
     url: 'https://github.com/RaulCatalinas',
     iconPath: '/icons/github.svg',
     iconAltText: 'GitHub Icon',
-    invertColors: true,
-    type: 'link'
+    invertColors: true
   },
   {
     url: 'https://x.com/CatalinasRaul',
     iconPath: '/icons/twitter.svg',
     iconAltText: 'Twitter/X Icon',
-    invertColors: false,
-    type: 'link'
+    invertColors: false
   },
   {
     url: 'mailto:raulcatalinas@gmail.com',
     iconPath: '/icons/email.svg',
     iconAltText: 'Email Icon',
-    invertColors: true,
-    type: 'email'
+    invertColors: true
   }
 ] as const

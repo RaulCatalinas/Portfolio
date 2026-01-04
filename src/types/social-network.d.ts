@@ -3,5 +3,4 @@ export interface SocialNetwork {
   iconPath: string
   iconAltText: string
   invertColors: boolean
-  type: 'link' | 'email'
 }
