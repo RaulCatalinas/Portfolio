@@ -16,24 +16,25 @@ const t = useTranslations(lang)
 
 <SectionLayout id="hero" styles="flex items-center justify-center">
   <div class="max-w-3xl text-center">
-    <h3
-      class="text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-4 transition-colors"
+    <p
+      class="text-sm font-medium text-blue-700 dark:text-blue-400 uppercase tracking-wider mb-4 transition-colors"
     >
       {t('hero.greeting')}
-    </h3>
+    </p>
+
     <h1
-      class="text-6xl font-bold text-black dark:text-white mb-4 text-wrap transition-colors"
+      class="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 transition-colors"
     >
       {t('hero.title')}
     </h1>
 
     <p
-      class="text-xl text-dark dark:text-white mb-8 transition-colors text-pretty whitespace-pre-line leading-relaxed"
+      class="text-xl text-gray-600 dark:text-gray-400 mb-8 transition-colors leading-relaxed max-w-2xl mx-auto whitespace-pre-line"
     >
       {t('hero.description')}
     </p>
 
-    <div class="flex gap-4 justify-center">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <LinkAsButton
         href="#projects"
         type="primary"
@@ -50,7 +51,8 @@ const t = useTranslations(lang)
         imageLoading="eager"
         text="GitHub"
         type="secondary"
-        iconStyles="invert-0 dark:invert ml-3"
+        iconStyles="invert-0 dark:invert"
+        styles="gap-2"
       />
     </div>
   </div>

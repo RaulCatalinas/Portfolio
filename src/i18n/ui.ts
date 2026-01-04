@@ -25,11 +25,11 @@ export const ui = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
-    'contacts.contactMe': 'Contact Me',
+    'contacts.contactMe': 'Contact me',
     'hero.greeting': "Hi, I'm Raúl",
     'hero.title': 'Junior Mobile Developer',
     'hero.description':
-      'I build functional, cross-platform mobile applications with Flutter and native Android apps with Kotlin. \nPassionate about clean code and user experience.',
+      'Building mobile apps with Flutter and Kotlin. Focused on clean code and great user experiences.',
     'hero.viewProjects': 'View Projects'
   },
   es: {
@@ -51,7 +51,7 @@ export const ui = {
     'hero.greeting': 'Hola, soy Raúl',
     'hero.title': 'Desarrollador Mobile Junior',
     'hero.description':
-      'Construyo aplicaciones móviles funcionales y multiplataforma con Flutter y aplicaciones Android nativas con Kotlin. \nApasionado por el código limpio y la experiencia de usuario.',
+      'Construyendo aplicaciones móviles con Flutter y Kotlin. Enfocado en código limpio y buena experiencia de usuario.',
     'hero.viewProjects': 'Ver Proyectos'
   }
 } as const
