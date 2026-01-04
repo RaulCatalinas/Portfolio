@@ -4,18 +4,33 @@ import AboutSection from '@/components/AboutSection.astro'
 import Config from '@/components/Config.astro'
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
+import LinkAsButton from '@/components/LinkAsButton.astro'
 import ProjectsSection from '@/components/ProjectsSection.astro'
 import Layout from '@/layouts/Layout.astro'
 
 // Constants
+import { EMAIL_ADDRESS } from '@/constants/email'
 import { projects } from '@/constants/projects'
 import { socialNetworks } from '@/constants/social-networks'
 import { technicalSkills } from '@/constants/technical-skills'
+
+// i18n
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <Layout>
   <Header />
-  <Config />
+  <div class="flex flex-row gap-4 items-center justify-center">
+    <Config />
+    <LinkAsButton
+      href={EMAIL_ADDRESS}
+      type="primary"
+      text={t('contacts.contactMe')}
+    />
+  </div>
   <AboutSection {technicalSkills} />
   <ProjectsSection {projects} />
   <Footer {socialNetworks} />

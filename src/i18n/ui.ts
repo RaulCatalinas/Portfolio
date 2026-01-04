@@ -24,7 +24,8 @@ export const ui = {
     'devStatus.comingSoon': 'Coming soon',
     'nav.home': 'Home',
     'nav.about': 'About',
-    'nav.projects': 'Projects'
+    'nav.projects': 'Projects',
+    'contacts.contactMe': 'Get in Touch'
   },
   es: {
     'about.sectionTitle': 'Sobre Mí',
@@ -40,6 +41,7 @@ export const ui = {
     'devStatus.comingSoon': 'Próximamente',
     'nav.home': 'Inicio',
     'nav.about': 'Sobre Mí',
-    'nav.projects': 'Proyectos'
+    'nav.projects': 'Proyectos',
+    'contacts.contactMe': 'Contáctame'
   }
 } as const

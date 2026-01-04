@@ -1,4 +1,5 @@
 import type { SocialNetwork } from '@/types/social-network'
+import { EMAIL_ADDRESS } from './email'
 
 export const socialNetworks: SocialNetwork[] = [
   {
@@ -14,7 +15,7 @@ export const socialNetworks: SocialNetwork[] = [
     invertColors: false
   },
   {
-    url: 'mailto:raulcatalinas@gmail.com',
+    url: EMAIL_ADDRESS,
     iconPath: '/icons/email.svg',
     iconAltText: 'Email Icon',
     invertColors: true
