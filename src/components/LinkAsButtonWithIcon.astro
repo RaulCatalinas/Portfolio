@@ -15,6 +15,7 @@ interface Props {
   imageHeight: number
   imageLoading: 'eager' | 'lazy'
   styles?: string
+  iconStyles?: string
 }
 
 const {
@@ -26,7 +27,8 @@ const {
   imageWidth,
   imageHeight,
   imageLoading,
-  styles
+  styles,
+  iconStyles
 } = Astro.props
 ---
 
@@ -38,5 +40,6 @@ const {
     height={imageHeight}
     decoding="async"
     loading={imageLoading}
+    class={iconStyles}
   />
 </LinkAsButton>
