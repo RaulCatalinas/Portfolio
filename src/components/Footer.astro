@@ -16,31 +16,26 @@ const { socialNetworks } = Astro.props
   class="flex flex-row items-center justify-center bg-neutral-300 dark:bg-neutral-800 py-6"
 >
   {
-    socialNetworks.map(({ url, iconPath, iconAltText, invertColors }) => {
-      const isTwitter = iconPath.includes('twitter')
-      const size = isTwitter ? 30 : 26
-
-      return (
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mx-4 inline-block"
-        >
-          <Image
-            src={iconPath}
-            alt={iconAltText}
-            width={size}
-            height={size}
-            decoding="async"
-            loading="lazy"
-            class={`
-              inline-block hover:scale-110
-              ${invertColors ? 'invert-0 dark:invert' : ''}
-            `}
-          />
-        </a>
-      )
-    })
+    socialNetworks.map(({ url, iconPath, iconAltText, invertColors }) => (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mx-4 inline-block"
+      >
+        <Image
+          src={iconPath}
+          alt={iconAltText}
+          width={24}
+          height={24}
+          decoding="async"
+          loading="lazy"
+          class={`
+            inline-block hover:scale-110
+            ${invertColors ? 'invert-0 dark:invert' : ''}
+          `}
+        />
+      </a>
+    ))
   }
 </footer>

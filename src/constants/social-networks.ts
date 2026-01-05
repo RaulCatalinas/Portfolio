@@ -10,12 +10,6 @@ export const SOCIAL_NETWORKS: SocialNetwork[] = [
     invertColors: true
   },
   {
-    url: 'https://x.com/CatalinasRaul',
-    iconPath: '/icons/twitter.svg',
-    iconAltText: 'Twitter/X Icon',
-    invertColors: false
-  },
-  {
     url: EMAIL_ADDRESS,
     iconPath: '/icons/email.svg',
     iconAltText: 'Email Icon',
