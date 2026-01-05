@@ -17,12 +17,14 @@ const t = useTranslations(lang)
 ---
 
 <SectionLayout title={t('about.sectionTitle')} id="about">
-  <p class="text-black dark:text-white text-center mb-4 transition-colors">
+  <p
+    class="text-black dark:text-white text-center mb-4 transition-colors leading-relaxed"
+  >
     {t('about.intro')}
   </p>
 
   <div
-    class="grid grid-cols-2 gap-6 text-center bg-neutral-300 dark:bg-neutral-800 p-6 rounded-xl transition-colors"
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center bg-neutral-300 dark:bg-neutral-800 p-6 rounded-xl transition-colors"
   >
     <div>
       <h3 class="text-black dark:text-white text-xl font-semibold mb-4">
@@ -34,11 +36,12 @@ const t = useTranslations(lang)
         {t('about.descriptionPart1')}
       </p>
       <p
-        class="text-black dark:text-white text-pretty transition-colors lea ding-relaxed"
+        class="text-black dark:text-white text-pretty transition-colors leading-relaxed"
       >
         {t('about.descriptionPart2')}
       </p>
     </div>
+
     <div>
       <h3
         class="text-black dark:text-white text-xl font-semibold mb-4 transition-colors"

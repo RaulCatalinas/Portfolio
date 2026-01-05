@@ -98,17 +98,17 @@ const t = useTranslations(lang)
               />
             )}
 
-            <div class="flex gap-4">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
               <LinkAsButtonWithIcon
                 href={project.codeUrl}
                 text={t('featureProjects.viewCode')}
                 type="primary"
                 imageUrl="/icons/github.svg"
                 altText="GitHub logo"
-                imageWidth={30}
-                imageHeight={30}
+                imageWidth={26}
+                imageHeight={26}
                 imageLoading="lazy"
-                styles="gap-4"
+                styles="gap-2 w-full sm:w-auto justify-center"
                 iconStyles="invert"
               />
               {packageUrl && (
@@ -116,6 +116,7 @@ const t = useTranslations(lang)
                   href={packageUrl}
                   text={t('featureProjects.viewPackage')}
                   type="secondary"
+                  styles="w-full sm:w-auto"
                 />
               )}
             </div>
