@@ -1,16 +1,10 @@
 ---
 // Components
 import SectionLayout from '@/layouts/SectionLayout.astro'
-import LinkAsButton from './LinkAsButton.astro'
-import LinkAsButtonWithIcon from './LinkAsButtonWithIcon.astro'
-import RenderDevelopmentStatus from './RenderDevelopmentStatus.astro'
-import RenderTechnologiesLabels from './RenderTechnologiesLabels.astro'
+import AppCard from './AppCard.astro'
 
 // Types
 import type { AppProject, LibraryProject, Project } from '@/types/projects'
-
-// Astro
-import { Image } from 'astro:assets'
 
 // i18n
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
@@ -27,7 +21,7 @@ const t = useTranslations(lang)
 
 <SectionLayout title={t('featureProjects.sectionTitle')} id="projects">
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-6 text-black dark:text-white max-w-5xl mx-auto transition-colors"
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-black dark:text-white max-w-5xl mx-auto transition-colors"
   >
     {
       projects.map(project => {
@@ -53,78 +47,18 @@ const t = useTranslations(lang)
             : undefined
 
         return (
-          <article
-            class={`
-              flex flex-col items-center text-center bg-neutral-300 transition-colors
-              dark:bg-neutral-800 rounded-xl ${imageUrl ? 'p-8' : 'p-6'}
-            `}
-          >
-            <span class="text-xs font-medium text-blue-700 dark:text-blue-400/80 mb-4 uppercase tracking-widest transition-colors">
-              {`
-                ${project.type}${
-                  programmingLanguage ? ` • ${programmingLanguage}` : ''
-                }
-              `}
-            </span>
-
-            {imageUrl && altText && (
-              <Image
-                src={imageUrl}
-                alt={altText}
-                width={125}
-                height={125}
-                loading="lazy"
-                class="mb-6"
-                decoding="async"
-              />
-            )}
-
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-3 w-max">
-              <h3 class="text-2xl font-semibold">{project.title}</h3>
-              <RenderDevelopmentStatus inDevelopment={project.inDevelopment} />
-            </div>
-
-            <p
-              class={`
-                text-neutral-800 dark:text-gray-400 mb-6 leading-relaxed
-                transition-colors text-pretty whitespace-pre-line
-                ${imageUrl ? 'grow' : ''}
-              `}
-            >
-              {project.description[lang]}
-            </p>
-
-            {technologies && (
-              <RenderTechnologiesLabels
-                technologies={technologies}
-                type="secondary"
-                styles="mb-6"
-              />
-            )}
-
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
-              <LinkAsButtonWithIcon
-                href={project.codeUrl}
-                text={t('featureProjects.viewCode')}
-                type="primary"
-                imageUrl="/icons/github.svg"
-                altText="GitHub logo"
-                imageWidth={26}
-                imageHeight={26}
-                imageLoading="lazy"
-                styles="gap-2 w-full sm:w-auto justify-center"
-                iconStyles="invert"
-              />
-              {packageUrl && (
-                <LinkAsButton
-                  href={packageUrl}
-                  text={t('featureProjects.viewPackage')}
-                  type="secondary"
-                  styles="w-full sm:w-auto"
-                />
-              )}
-            </div>
-          </article>
+          <AppCard
+            title={project.title}
+            descriptions={project.descriptions}
+            inDevelopment={project.inDevelopment}
+            codeUrl={project.codeUrl}
+            type={project.type}
+            programmingLanguage={programmingLanguage}
+            imageUrl={imageUrl}
+            altText={altText}
+            technologies={technologies}
+            packageUrl={packageUrl}
+          />
         )
       })
     }

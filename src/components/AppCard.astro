@@ -1,0 +1,126 @@
+---
+// Components
+import LinkAsButton from './LinkAsButton.astro'
+import LinkAsButtonWithIcon from './LinkAsButtonWithIcon.astro'
+import RenderDevelopmentStatus from './RenderDevelopmentStatus.astro'
+import RenderTechnologiesLabels from './RenderTechnologiesLabels.astro'
+
+// Types
+import type { ProjectDescriptions, ProjectType } from '@/types/projects'
+
+// i18n
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+// Astro
+import { Image } from 'astro:assets'
+
+interface Props {
+  title: string
+  descriptions: ProjectDescriptions
+  type: ProjectType
+  programmingLanguage?: string
+  imageUrl?: string
+  altText?: string
+  technologies?: string[]
+  packageUrl?: string
+  inDevelopment: boolean
+  codeUrl: string
+}
+
+const {
+  title,
+  descriptions,
+  inDevelopment,
+  codeUrl,
+  type,
+  programmingLanguage,
+  imageUrl,
+  altText,
+  technologies,
+  packageUrl
+} = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<article
+  class={`
+    flex flex-col items-center text-center bg-neutral-300 transition-colors
+    dark:bg-neutral-800 rounded-xl ${imageUrl ? 'p-8' : 'p-6'}
+  `}
+>
+  <span
+    class="text-xs font-medium text-blue-700 dark:text-blue-400/80 mb-4 uppercase tracking-widest transition-colors"
+  >
+    {`${type}${programmingLanguage ? ` • ${programmingLanguage}` : ''}`}
+  </span>
+
+  {
+    imageUrl && altText && (
+      <Image
+        src={imageUrl}
+        alt={altText}
+        width={125}
+        height={125}
+        loading="lazy"
+        class="mb-6"
+        decoding="async"
+      />
+    )
+  }
+
+  <div
+    class="flex flex-col md:flex-row items-center justify-center gap-6 mb-3 w-max"
+  >
+    <h3 class="text-2xl font-semibold">{title}</h3>
+    <RenderDevelopmentStatus {inDevelopment} />
+  </div>
+
+  <p
+    class={`
+      text-neutral-800 dark:text-gray-400 mb-6 leading-relaxed
+      transition-colors text-pretty whitespace-pre-line
+      ${imageUrl ? 'grow' : ''}
+    `}
+  >
+    {descriptions[lang]}
+  </p>
+
+  {
+    technologies && (
+      <RenderTechnologiesLabels
+        technologies={technologies}
+        type="secondary"
+        styles="mb-6"
+      />
+    )
+  }
+
+  <div
+    class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0"
+  >
+    <LinkAsButtonWithIcon
+      href={codeUrl}
+      text={t('featureProjects.viewCode')}
+      type="primary"
+      imageUrl="/icons/github.svg"
+      altText="GitHub logo"
+      imageWidth={26}
+      imageHeight={26}
+      imageLoading="lazy"
+      styles="gap-2 w-full sm:w-auto justify-center"
+      iconStyles="invert"
+    />
+    {
+      packageUrl && (
+        <LinkAsButton
+          href={packageUrl}
+          text={t('featureProjects.viewPackage')}
+          type="secondary"
+          styles="w-full sm:w-auto"
+        />
+      )
+    }
+  </div>
+</article>

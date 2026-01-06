@@ -8,7 +8,14 @@ interface Props {
 const { title, id, styles } = Astro.props
 ---
 
-<section class={`m-16 ${styles ?? ''}`} {id}>
+<section
+  class={`
+    flex flex-col justify-center items-center
+    m-6.5 mt-16 mb-16 lg:w-auto md:w-[calc(100%-2rem)] max-sm:w-[calc(100%-3rem)]
+    ${styles ?? ''}
+  `}
+  {id}
+>
   {
     title && (
       <h2 class="text-3xl text-center mb-12 text-black dark:text-white transition-colors">

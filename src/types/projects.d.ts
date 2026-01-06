@@ -1,9 +1,11 @@
+export interface ProjectDescriptions {
+  en: string
+  es: string
+}
+
 interface BaseProject {
   title: string
-  description: {
-    en: string
-    es: string
-  }
+  descriptions: ProjectDescriptions
   codeUrl: string
   inDevelopment: boolean
 }
@@ -22,3 +24,4 @@ export interface LibraryProject extends BaseProject {
 }
 
 export type Project = AppProject | LibraryProject
+export type ProjectType = Project['type']

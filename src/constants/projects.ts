@@ -3,7 +3,7 @@ import type { Project } from '@/types/projects'
 export const PROJECTS: Project[] = [
   {
     title: 'EasyViewer',
-    description: {
+    descriptions: {
       en: 'App to download YouTube videos. \nCompletely rebuilt from Python/Flet to Flutter for better performance.',
       es: 'Aplicación para descargar videos de YouTube. \nCompletamente reconstruida desde Python/Flet a Flutter para mejor rendimiento.'
     },
@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'README-Builder',
-    description: {
+    descriptions: {
       en: 'Create professional README files in minutes. \nSimple form-based interface for developers who want great documentation without the hassle.',
       es: 'Crea archivos README profesionales en minutos. \nInterfaz basada en formularios para desarrolladores que quieren una documentación genial sin complicaciones.'
     },
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'LogKeeper',
-    description: {
+    descriptions: {
       en: 'Simple file logger that works out of the box with automatic timestamping and session management',
       es: 'Logger simple para archivos que funciona de inmediato con timestamps automáticos y gestión de sesiones'
     },
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'Flutter-Themed',
-    description: {
+    descriptions: {
       en: 'A simple, plug-and-play theme management library for Flutter with optional persistence and zero configuration required.',
       es: 'Una biblioteca de gestión de temas simple y lista para usar para Flutter con persistencia opcional y sin configuración requerida.'
     },
