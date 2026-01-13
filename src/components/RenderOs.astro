@@ -1,0 +1,50 @@
+---
+// Constants
+import { ICON_SIZES } from '@/constants/sizes'
+
+// Utils
+import { capitalizeFirstLetter } from '@/utils/capitalize-first-letter'
+
+// Types
+import type { OsIcon } from '@/types/projects'
+
+// Astro
+import { Image } from 'astro:assets'
+
+// i18N
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+interface Props {
+  osIcons: OsIcon[]
+}
+
+const { osIcons } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<div class="flex flex-col gap-4 items-center justify-center">
+  <p class="text-base text-center text-black dark:text-white">
+    {t('featureProjects.availableFor')}
+  </p>
+
+  <div class="flex flex-row gap-4 mb-6 items-center justify-center">
+    {
+      osIcons.map(osIcon => (
+        <Image
+          src={`/icons/${osIcon}.svg`}
+          alt={capitalizeFirstLetter(osIcon.split('-')[0])}
+          decoding="async"
+          loading="lazy"
+          width={ICON_SIZES[osIcon]}
+          height={ICON_SIZES[osIcon]}
+          class={`
+            ${osIcon === 'macos-icon' ? 'invert dark:invert-0' : ''}
+            ${osIcon === 'ios-icon' ? 'invert-0 dark:invert' : ''}
+          `}
+        />
+      ))
+    }
+  </div>
+</div>

@@ -3,10 +3,11 @@
 import LinkAsButton from './LinkAsButton.astro'
 import LinkAsButtonWithIcon from './LinkAsButtonWithIcon.astro'
 import RenderDevelopmentStatus from './RenderDevelopmentStatus.astro'
+import RenderOs from './RenderOs.astro'
 import RenderTechnologiesLabels from './RenderTechnologiesLabels.astro'
 
 // Types
-import type { ProjectDescriptions, ProjectType } from '@/types/projects'
+import type { OsIcon, ProjectDescriptions, ProjectType } from '@/types/projects'
 
 // i18n
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
@@ -25,6 +26,7 @@ interface Props {
   packageUrl?: string
   inDevelopment: boolean
   codeUrl: string
+  osIcons?: OsIcon[]
 }
 
 const {
@@ -37,7 +39,8 @@ const {
   imageUrl,
   altText,
   technologies,
-  packageUrl
+  packageUrl,
+  osIcons
 } = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
@@ -96,6 +99,8 @@ const t = useTranslations(lang)
       />
     )
   }
+
+  {osIcons != null && osIcons.length !== 0 && <RenderOs {osIcons} />}
 
   <div
     class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0"

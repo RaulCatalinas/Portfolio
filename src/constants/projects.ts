@@ -13,7 +13,8 @@ export const PROJECTS: Project[] = [
     codeUrl: 'https://github.com/RaulCatalinas/EasyViewer',
     type: 'app',
     technologies: ['Dart', 'Flutter'],
-    inDevelopment: false
+    inDevelopment: false,
+    osIcons: ['windows-icon']
   },
   {
     title: 'README-Builder',
@@ -27,7 +28,8 @@ export const PROJECTS: Project[] = [
     codeUrl: 'https://github.com/RaulCatalinas/README-Builder',
     type: 'app',
     technologies: ['Kotlin', 'Kotlin Multiplatform (KMP)'],
-    inDevelopment: true
+    inDevelopment: true,
+    osIcons: ['windows-icon']
   },
   {
     title: 'LogKeeper',

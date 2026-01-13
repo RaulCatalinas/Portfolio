@@ -46,6 +46,9 @@ const t = useTranslations(lang)
             ? (project as AppProject).technologies
             : undefined
 
+        const osIcons =
+          project.type === 'app' ? (project as AppProject).osIcons : undefined
+
         return (
           <AppCard
             title={project.title}
@@ -58,6 +61,7 @@ const t = useTranslations(lang)
             altText={altText}
             technologies={technologies}
             packageUrl={packageUrl}
+            {osIcons}
           />
         )
       })
