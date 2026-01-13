@@ -25,7 +25,12 @@ const t = useTranslations(lang)
 ---
 
 <div class="flex flex-col gap-4 items-center justify-center">
-  <p class="text-base text-center text-black dark:text-white">
+  <p
+    class={`
+      text-center text-black dark:text-white
+      ${osIcons.length < 3 ? 'text-sm' : 'text-base'}
+    `}
+  >
     {t('featureProjects.availableFor')}
   </p>
 

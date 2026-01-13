@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
     type: 'app',
     technologies: ['Dart', 'Flutter'],
     inDevelopment: false,
-    osIcons: ['windows-icon']
+    osIcons: ['windows-icon', 'macos-icon']
   },
   {
     title: 'README-Builder',
