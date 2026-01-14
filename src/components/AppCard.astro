@@ -134,9 +134,10 @@ const t = useTranslations(lang)
     {
       type === 'app' && githubRepoName !== undefined && (
         <DownloadButton
+          text={t('featureProjects.downloadText')}
           githubRepoName={githubRepoName}
           inDevelopment={inDevelopment}
-          imgAltText="Download icon"
+          imgAltText={t('featureProjects.downloadIconAtlText')}
           client:visible
         />
       )

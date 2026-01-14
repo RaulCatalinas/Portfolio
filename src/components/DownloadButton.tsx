@@ -1,10 +1,12 @@
 interface Props {
+  text: string
   inDevelopment: boolean
   githubRepoName: string
   imgAltText: string
 }
 
 export default function DownloadButton({
+  text,
   inDevelopment,
   githubRepoName,
   imgAltText
@@ -31,7 +33,7 @@ export default function DownloadButton({
       `}
     >
       <div className="flex flex-row items-center justify-center gap-2">
-        <p className="text-base">Download</p>
+        <p className="text-base">{text}</p>
         <img
           src="/icons/download-arrow.svg"
           alt={imgAltText}
