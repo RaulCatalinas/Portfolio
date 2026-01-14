@@ -8,12 +8,13 @@ export const PROJECTS: Project[] = [
       es: 'Aplicación para descargar videos de YouTube. \nCompletamente reconstruida desde Python/Flet a Flutter para mejor rendimiento.'
     },
     imageUrl:
-      'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto/v1753656531/EasyViewer_aboiab.png',
+      'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto,dpr_auto/v1753656531/EasyViewer_aboiab.png',
     altText: 'EasyViewer logo',
     codeUrl: 'https://github.com/RaulCatalinas/EasyViewer',
     type: 'app',
     technologies: ['Dart', 'Flutter'],
-    inDevelopment: false
+    inDevelopment: false,
+    osIcons: ['windows-icon']
   },
   {
     title: 'README-Builder',
@@ -22,12 +23,13 @@ export const PROJECTS: Project[] = [
       es: 'Crea archivos README profesionales en minutos. \nInterfaz basada en formularios para desarrolladores que quieren una documentación genial sin complicaciones.'
     },
     imageUrl:
-      'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto/v1753656132/ReadmeCraft_asxz45.png',
+      'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto,dpr_auto/v1753656132/ReadmeCraft_asxz45.png',
     altText: 'README-Builder logo',
     codeUrl: 'https://github.com/RaulCatalinas/README-Builder',
     type: 'app',
     technologies: ['Kotlin', 'Kotlin Multiplatform (KMP)'],
-    inDevelopment: true
+    inDevelopment: true,
+    osIcons: ['windows-icon']
   },
   {
     title: 'LogKeeper',

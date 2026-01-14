@@ -1,3 +1,10 @@
+export type OsIcon =
+  | 'windows-icon'
+  | 'macos-icon'
+  | 'linux-icon'
+  | 'android-icon'
+  | 'ios-icon'
+
 export interface ProjectDescriptions {
   en: string
   es: string
@@ -15,6 +22,7 @@ export interface AppProject extends BaseProject {
   imageUrl: string
   altText: string
   technologies: string[]
+  osIcons: OsIcon[]
 }
 
 export interface LibraryProject extends BaseProject {
