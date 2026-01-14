@@ -14,6 +14,7 @@ import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 // Astro
 import { Image } from 'astro:assets'
+import DownloadButton from './DownloadButton'
 
 interface Props {
   title: string
@@ -27,6 +28,7 @@ interface Props {
   inDevelopment: boolean
   codeUrl: string
   osIcons?: OsIcon[]
+  githubRepoName?: string
 }
 
 const {
@@ -40,7 +42,8 @@ const {
   altText,
   technologies,
   packageUrl,
-  osIcons
+  osIcons,
+  githubRepoName
 } = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
@@ -124,6 +127,17 @@ const t = useTranslations(lang)
           text={t('featureProjects.viewPackage')}
           type="secondary"
           styles="w-full sm:w-auto"
+        />
+      )
+    }
+
+    {
+      type === 'app' && githubRepoName !== undefined && (
+        <DownloadButton
+          githubRepoName={githubRepoName}
+          inDevelopment={inDevelopment}
+          imgAltText="Download icon"
+          client:visible
         />
       )
     }

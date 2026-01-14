@@ -23,6 +23,7 @@ export interface AppProject extends BaseProject {
   altText: string
   technologies: string[]
   osIcons: OsIcon[]
+  githubRepoName: string
 }
 
 export interface LibraryProject extends BaseProject {

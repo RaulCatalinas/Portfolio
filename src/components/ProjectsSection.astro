@@ -49,6 +49,11 @@ const t = useTranslations(lang)
         const osIcons =
           project.type === 'app' ? (project as AppProject).osIcons : undefined
 
+        const githubRepoName =
+          project.type === 'app'
+            ? (project as AppProject).githubRepoName
+            : undefined
+
         return (
           <AppCard
             title={project.title}
@@ -56,12 +61,13 @@ const t = useTranslations(lang)
             inDevelopment={project.inDevelopment}
             codeUrl={project.codeUrl}
             type={project.type}
-            programmingLanguage={programmingLanguage}
-            imageUrl={imageUrl}
-            altText={altText}
-            technologies={technologies}
-            packageUrl={packageUrl}
+            {programmingLanguage}
+            {imageUrl}
+            {altText}
+            {technologies}
+            {packageUrl}
             {osIcons}
+            {githubRepoName}
           />
         )
       })

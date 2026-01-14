@@ -14,7 +14,8 @@ export const PROJECTS: Project[] = [
     type: 'app',
     technologies: ['Dart', 'Flutter'],
     inDevelopment: false,
-    osIcons: ['windows-icon']
+    osIcons: ['windows-icon'],
+    githubRepoName: 'EasyViewer'
   },
   {
     title: 'README-Builder',
@@ -29,7 +30,8 @@ export const PROJECTS: Project[] = [
     type: 'app',
     technologies: ['Kotlin', 'Kotlin Multiplatform (KMP)'],
     inDevelopment: true,
-    osIcons: ['windows-icon']
+    osIcons: ['windows-icon'],
+    githubRepoName: 'README-Builder'
   },
   {
     title: 'LogKeeper',
