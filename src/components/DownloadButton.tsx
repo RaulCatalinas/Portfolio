@@ -46,7 +46,7 @@ export default function DownloadButton({
           setIsOpen(!isOpen)
         }}
         className={`
-          px-6 py-2.5 border rounded-lg border-neutral-400
+          w-full px-6 py-2.5 border rounded-lg border-neutral-400
           hover:border-neutral-500 dark:border-neutral-700
           dark:hover:border-neutral-600 hover:cursor-pointer dark:text-white
           disabled:cursor-not-allowed disabled:opacity-60 text-neutral-800
