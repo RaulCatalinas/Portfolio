@@ -19,6 +19,7 @@ export const ui = {
     'featureProjects.availableFor': 'Available for:',
     'featureProjects.downloadText': 'Download',
     'featureProjects.downloadIconAtlText': 'Download icon',
+    'featureProjects.dropdownSelectOsTitle': 'Select operating system',
     'devStatus.comingSoon': 'Coming soon',
     'nav.home': 'Home',
     'nav.about': 'About',
@@ -28,7 +29,8 @@ export const ui = {
     'hero.title': 'Junior Mobile Developer',
     'hero.description':
       'Building mobile apps with Flutter and Kotlin. Focused on clean code and great user experiences.',
-    'hero.viewProjects': 'View Projects'
+    'hero.viewProjects': 'View Projects',
+    'selectOs.dropdownTitle': 'Select an operating system'
   },
   es: {
     'about.sectionTitle': 'Sobre Mí',
@@ -44,6 +46,7 @@ export const ui = {
     'featureProjects.availableFor': 'Disponible para:',
     'featureProjects.downloadText': 'Descargar',
     'featureProjects.downloadIconAtlText': 'Icono de descarga',
+    'featureProjects.dropdownSelectOsTitle': 'Selecciona sistema operativo',
     'devStatus.comingSoon': 'Próximamente',
     'nav.home': 'Inicio',
     'nav.about': 'Sobre Mí',
@@ -53,6 +56,7 @@ export const ui = {
     'hero.title': 'Desarrollador Mobile Junior',
     'hero.description':
       'Construyendo aplicaciones móviles con Flutter y Kotlin. Enfocado en código limpio y buena experiencia de usuario.',
-    'hero.viewProjects': 'Ver Proyectos'
+    'hero.viewProjects': 'Ver Proyectos',
+    'selectOs.dropdownTitle': 'Selecciona un sistema operativo'
   }
 } as const

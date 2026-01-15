@@ -5,6 +5,8 @@ export type OsIcon =
   | 'android-icon'
   | 'ios-icon'
 
+export type Os = 'windows' | 'macos' | 'linux' | 'android' | 'ios'
+
 export interface ProjectDescriptions {
   en: string
   es: string
