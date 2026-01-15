@@ -13,7 +13,11 @@ import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [
+      tailwindcss({
+        optimize: true
+      })
+    ]
   },
 
   i18n: {
@@ -26,5 +30,14 @@ export default defineConfig({
 
   site: 'https://raulcatalinas.vercel.app',
 
-  integrations: [sitemap(), robotsTxt(), react()]
+  integrations: [
+    sitemap(),
+    robotsTxt(),
+    react({
+      babel: {
+        minified: true,
+        plugins: ['babel-plugin-react-compiler']
+      }
+    })
+  ]
 })

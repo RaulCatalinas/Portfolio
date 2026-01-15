@@ -2,6 +2,7 @@ const astro = require('eslint-plugin-astro')
 const jsxA11y = require('eslint-plugin-jsx-a11y')
 const prettier = require('eslint-plugin-prettier/recommended')
 const eslintConfigPrettier = require('eslint-config-prettier/flat')
+const reactHooks = require('eslint-plugin-react-hooks')
 
 module.exports = (async function config() {
   const { default: love } = await import('eslint-config-love')
@@ -12,8 +13,24 @@ module.exports = (async function config() {
     prettier,
 
     {
+      ignores: [
+        'node_modules',
+        '.astro',
+        '.github',
+        '.husky',
+        '.vscode',
+        'public',
+        'dist',
+        'build'
+      ]
+    },
+    {
       ...love,
       files: ['**/*.ts', '**/*.tsx']
+    },
+    {
+      ...reactHooks.configs.flat['recommended-latest'],
+      files: ['**/*.txs']
     },
     {
       files: ['**/*.astro'],
@@ -39,7 +56,7 @@ module.exports = (async function config() {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-magic-numbers': 'off',
-        'eslint-comments/require-description': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
         'prefer-destructuring': 'off',
         'no-console': 'off',
         'prettier/prettier': 'error'
