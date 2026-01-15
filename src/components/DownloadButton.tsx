@@ -3,6 +3,7 @@ import SelectOsDropdown from './SelectOsDropdown'
 
 // Types
 import type { Os } from '@/types/projects'
+import { getDownloadUrl } from '@/utils/get-download-url'
 
 // React
 import { useState } from 'react'
@@ -14,6 +15,7 @@ interface Props {
   imgAltText: string
   availableOs: Os[]
   dropdownSelectOsTitle: string
+  downloadingText: string
 }
 
 export default function DownloadButton({
@@ -22,26 +24,37 @@ export default function DownloadButton({
   githubRepoName,
   imgAltText,
   dropdownSelectOsTitle,
-  availableOs
+  availableOs,
+  downloadingText
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isDownloading, setIsDownloading] = useState(false)
 
   const handleDownload = (os: Os) => {
-    try {
-      if (inDevelopment) return
+    setIsDownloading(true)
 
-      console.log(`Downloading app for ${os}...`)
+    getDownloadUrl({ githubRepoName, os })
+      .then(downloadUrl => {
+        const $a = document.createElement('a')
 
-      setIsOpen(false)
-    } catch (e) {
-      console.error(e)
-    }
+        $a.setAttribute('href', downloadUrl)
+        $a.click()
+        $a.remove()
+
+        setIsOpen(false)
+      })
+      .catch((e: unknown) => {
+        console.error(e)
+      })
+      .finally(() => {
+        setIsDownloading(false)
+      })
   }
 
   return (
     <div className="relative inline-block">
       <button
-        disabled={inDevelopment}
+        disabled={inDevelopment || isDownloading}
         onClick={() => {
           setIsOpen(!isOpen)
         }}
@@ -53,7 +66,9 @@ export default function DownloadButton({
         `}
       >
         <div className="flex flex-row items-center justify-center gap-2">
-          <span className="text-base">{text}</span>
+          <span className="text-base">
+            {isDownloading ? downloadingText : text}
+          </span>
           <img
             src="/icons/download-arrow.svg"
             alt={imgAltText}

@@ -39,6 +39,7 @@ module.exports = (async function config() {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-magic-numbers': 'off',
+        'eslint-comments/require-description': 'off',
         'prefer-destructuring': 'off',
         'no-console': 'off',
         'prettier/prettier': 'error'
