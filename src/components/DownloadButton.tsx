@@ -33,7 +33,7 @@ export default function DownloadButton({
       `}
     >
       <div className="flex flex-row items-center justify-center gap-2">
-        <p className="text-base">{text}</p>
+        <span className="text-base">{text}</span>
         <img
           src="/icons/download-arrow.svg"
           alt={imgAltText}

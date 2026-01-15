@@ -40,7 +40,6 @@ module.exports = (async function config() {
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-magic-numbers': 'off',
         'prefer-destructuring': 'off',
-        '@typescript-eslint/prefer-destructuring': 'error',
         'no-console': 'off',
         'prettier/prettier': 'error'
       }
