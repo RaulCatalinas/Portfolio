@@ -5,9 +5,14 @@ import '@/styles/global.css'
 // Third-Party components
 import { SEO } from 'astro-seo'
 import Analytics from '@vercel/analytics/astro'
+import { AstroFont } from 'astro-font'
 
 // i18n
 import { getLangFromUrl } from '@/i18n/utils'
+
+// NodeJs
+import { join } from 'node:path'
+import { cwd } from 'node:process'
 
 const lang = getLangFromUrl(Astro.url)
 
@@ -69,29 +74,53 @@ const seoDescription =
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Raul Catalinas Esteban - Developer Portfolio</title>
-    <link
-      rel="preload"
-      href="/fonts/Inter-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/Inter-Medium.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/Inter-SemiBold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
 
-    <Analytics />
+    <AstroFont
+      config={[
+        {
+          name: 'Inter',
+          fallback: 'sans-serif',
+          display: 'swap',
+          selector: 'body',
+          preload: true,
+          src: [
+            {
+              path: join(cwd(), 'public', 'fonts', 'Inter-Regular.woff2'),
+              weight: 400,
+              style: 'normal'
+            }
+          ]
+        },
+        {
+          name: 'Inter',
+          fallback: 'sans-serif',
+          display: 'swap',
+          selector: 'h3,h4,h5,h6',
+          preload: true,
+          src: [
+            {
+              path: join(cwd(), 'public', 'fonts', 'Inter-Medium.woff2'),
+              weight: 500,
+              style: 'normal'
+            }
+          ]
+        },
+        {
+          name: 'Inter',
+          fallback: 'sans-serif',
+          display: 'swap',
+          selector: 'h1,h2,strong,b',
+          preload: true,
+          src: [
+            {
+              path: join(cwd(), 'public', 'fonts', 'Inter-SemiBold.woff2'),
+              weight: 600,
+              style: 'normal'
+            }
+          ]
+        }
+      ]}
+    />
 
     <script is:inline>
       const theme = localStorage.getItem('theme') || 'light'
@@ -109,39 +138,16 @@ const seoDescription =
         )
       }
     </script>
+
+    <Analytics />
   </head>
   <body
-    class="bg-white dark:bg-neutral-900 text-black dark:text-white transition-colors"
+    class={`
+      w-full h-full m-0 bg-white dark:bg-neutral-900
+      text-black dark:text-white transition-colors
+    `}
     id="top"
   >
     <slot />
   </body>
 </html>
-
-<style is:global>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-  }
-
-  h1,
-  h2 {
-    font-weight: 600;
-  }
-
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 500;
-  }
-
-  strong,
-  b {
-    font-weight: 600;
-  }
-</style>
