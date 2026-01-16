@@ -1,4 +1,12 @@
 ---
+// Components
+import Config from './Config.astro'
+import LinkAsButton from './LinkAsButton.astro'
+
+// Constants
+import { EMAIL_ADDRESS } from '@/constants/email'
+
+// i18n
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
@@ -39,3 +47,12 @@ const t = useTranslations(lang)
 </header>
 
 <div class="h-20"></div>
+
+<div role="banner" class="flex flex-row gap-4 items-center justify-center">
+  <Config />
+  <LinkAsButton
+    href={EMAIL_ADDRESS}
+    type="primary"
+    text={t('contacts.contactMe')}
+  />
+</div>
