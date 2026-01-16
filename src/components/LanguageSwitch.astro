@@ -4,11 +4,15 @@ const currentLang = currentPath.startsWith('/es') ? 'es' : 'en'
 ---
 
 <div
+  role="group"
+  aria-label="Language selector"
   class="flex items-center bg-neutral-300 dark:bg-gray-800 rounded-full p-1 gap-1 transition-colors"
   id="language-container"
 >
   <a
     href="/"
+    aria-current={currentLang === 'en' ? 'page' : undefined}
+    lang="en"
     class={`
       px-2 py-1 rounded-full text-xs font-medium transition-all duration-200
       ${
@@ -23,6 +27,8 @@ const currentLang = currentPath.startsWith('/es') ? 'es' : 'en'
 
   <a
     href="/es"
+    aria-current={currentLang === 'es' ? 'page' : undefined}
+    lang="es"
     class={`
       px-2 py-1 rounded-full text-xs font-medium transition-all duration-200
       ${
