@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
     altText: 'README-Builder logo',
     codeUrl: 'https://github.com/RaulCatalinas/README-Builder',
     type: 'app',
-    technologies: ['Kotlin', 'Kotlin Multiplatform (KMP)'],
+    technologies: ['Dart', 'Flutter'],
     inDevelopment: true,
     osIcons: ['windows-icon'],
     githubRepoName: 'README-Builder'
