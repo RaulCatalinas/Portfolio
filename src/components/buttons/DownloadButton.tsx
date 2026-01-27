@@ -1,5 +1,5 @@
 // Components
-import SelectOsDropdown from './SelectOsDropdown'
+import SelectOsDropdown from '../dropdowns/SelectOsDropdown'
 
 // Types
 import type { Os } from '@/types/projects'
