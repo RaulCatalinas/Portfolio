@@ -34,6 +34,38 @@ export const PROJECTS: Project[] = [
     githubRepoName: 'README-Builder'
   },
   {
+    title: 'Wizipedia',
+    descriptions: {
+      en: 'Native Android app that allows users to explore the Harry Potter universe through a modern interface built with Jetpack Compose. \nConsumes a REST API to display characters, houses, spells, and multimedia content.',
+      es: 'Aplicación Android nativa que permite explorar el universo de Harry Potter mediante una interfaz moderna desarrollada con Jetpack Compose. \nConsume una API REST para mostrar personajes, casas, hechizos y contenido multimedia.'
+    },
+    codeUrl: 'https://github.com/RaulCatalinas/Wizipedia-Android',
+    imageUrl:
+      'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto,dpr_auto/v1769593746/wizipedia-logo_yrzqac.svg',
+    type: 'app',
+    altText: 'Wizipedia app logo',
+    inDevelopment: true,
+    osIcons: ['android-icon'],
+    githubRepoName: 'Wizipedia-Android',
+    technologies: ['Kotlin', 'Jetpack Compose']
+  },
+  {
+    title: 'SkyPulse',
+    descriptions: {
+      en: 'Real-time weather forecast Android app with automatic geolocation. Built with Kotlin and Jetpack Compose as final project for SEPE Android Development course.',
+      es: 'Aplicación Android de pronóstico meteorológico en tiempo real con geolocalización automática. Desarrollada con Kotlin y Jetpack Compose como proyecto final del curso de Desarrollo Android de SEPE.'
+    },
+    codeUrl: 'https://github.com/RaulCatalinas/SkyPulse',
+    imageUrl:
+      'https://res.cloudinary.com/dqqpzn8h9/image/upload/c_scale,f_auto,w_125,h_125,q_auto,dpr_auto/v1769594714/skypulse-icon_pjrvck.svg',
+    type: 'app',
+    altText: 'SkyPulse app logo',
+    inDevelopment: true,
+    osIcons: ['android-icon'],
+    githubRepoName: 'Wizipedia-Android',
+    technologies: ['Kotlin', 'Jetpack Compose']
+  },
+  {
     title: 'LogKeeper',
     descriptions: {
       en: 'Simple file logger that works out of the box with automatic timestamping and session management',
