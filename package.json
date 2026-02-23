@@ -29,10 +29,10 @@
     "tailwindcss": "4.1.18"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.1",
-    "@commitlint/config-conventional": "20.4.1",
+    "@commitlint/cli": "20.4.2",
+    "@commitlint/config-conventional": "20.4.2",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint-config-love": "150.0.0",
+    "eslint-config-love": "151.0.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-astro": "1.6.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
